@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'My_Angular';
+  themeOptions = [
+    'infinity-theme',
+    'provence-theme',
+    'sweet-theme',
+    'deep-theme']
+  changeTheme(theme: string) {
+    (<any>window)["devuiThemeService"].applyTheme((<any>window)["devuiThemes"][theme]);
+  }
 }

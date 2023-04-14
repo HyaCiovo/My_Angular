@@ -1,10 +1,27 @@
-<app-header></app-header>
-<d-back-top class="back-top" [bottom]="'200px'" [visibleHeight]="80">
-  <!-- <ng-template #customTemplate>
-    <div class="devui-backtop-custom" dTooltip [content]="'回到顶部'" [position]="'left'">
-      <span class="icon-chevron-up"></span>
-    </div>
-  </ng-template> -->
-</d-back-top>
-<!-- 配置路由出口 -->
-<router-outlet></router-outlet>
+<d-layout>
+  <d-header>
+    <app-header></app-header>
+  </d-header>
+  <d-layout>
+    <d-aside>
+      <d-accordion [data]="menu" class="menu" linkType="routerLink" (activeItemChange)="onChange($event)"></d-accordion>
+    </d-aside>
+    <d-content>
+      <d-breadcrumb>
+        <d-breadcrumb-item>
+          <span>My Angular</span>
+        </d-breadcrumb-item>
+        <d-breadcrumb-item>
+          <span>{{tab}}</span>
+        </d-breadcrumb-item>
+      </d-breadcrumb>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </d-content>
+  </d-layout>
+  <d-footer>
+    <div class="txt-center powered">powered by HuaWei DevUI</div>
+    <div class="txt-center powered">加油华为，加油China</div>
+  </d-footer>
+</d-layout>

@@ -1,3 +1,10 @@
-<d-select [placeholder]="'ChooseTheme'" [options]="themeOptions" (valueChange)="changeTheme($event)" />
+<app-header></app-header>
+<d-back-top class="back-top" [bottom]="'200px'" [visibleHeight]="80">
+  <!-- <ng-template #customTemplate>
+    <div class="devui-backtop-custom" dTooltip [content]="'回到顶部'" [position]="'left'">
+      <span class="icon-chevron-up"></span>
+    </div>
+  </ng-template> -->
+</d-back-top>
 <!-- 配置路由出口 -->
 <router-outlet></router-outlet>

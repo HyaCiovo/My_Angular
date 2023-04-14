@@ -1,0 +1,10 @@
+@import 'ng-devui/styles-var/devui-var.scss';
+
+.back-top {
+  ::ng-deep {
+    .devui-backtop-content {
+      background-color: $devui-brand;
+      opacity: .6;
+    }
+  }
+}

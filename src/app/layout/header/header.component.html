@@ -1,0 +1,7 @@
+<h2 class="title">My Angular App</h2>
+<div class="txt-center powered">powered by DevUI</div>
+<div class="action-bar">
+  <span>主题选择</span>
+  <d-select class="theme-select" [placeholder]="'ChooseTheme'" [options]="themeOptions" [filterKey]="'name'"
+    (valueChange)="changeTheme($event)" [ngModel]="themeOptions[0]" />
+</div>

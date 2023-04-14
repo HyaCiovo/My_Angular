@@ -19,6 +19,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { TestComponent } from './pages/test/test.component';
+import { DrawerContentComponent } from './components/drawer-content/drawer-content.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TestComponent } from './pages/test/test.component';
     HomeComponent,
     NotFoundComponent,
     HeaderComponent,
-    TestComponent
+    TestComponent,
+    DrawerContentComponent
   ],
   imports: [
     BrowserModule,

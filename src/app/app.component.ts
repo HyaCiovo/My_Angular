@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'My_Angular';
-  tab: string = '首页'
   menu = [
     {
       title: '首页',
@@ -18,12 +17,13 @@ export class AppComponent {
       link: "/about"
     },
     {
-      title: '内容三（默认展开）',
-      open: true,
-      children: [{ title: '子内容1(禁用)', disabled: true }, { title: '子内容2(默认激活)' }, { title: '子内容3' }],
+      title: '测试',
+      link: "/test"
     },
+    // {
+    //   title: '内容三（默认展开）',
+    //   open: true,
+    //   children: [{ title: '子内容1(禁用)', disabled: true }, { title: '子内容2(默认激活)' }, { title: '子内容3' }],
+    // },
   ];
-  onChange(e: any) {
-    this.tab = e.title
-  }
 }

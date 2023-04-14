@@ -25,6 +25,7 @@ d-layout {
 }
 
 d-aside {
+  min-width: 200px;
   margin-top: 60px;
   border-left: 1px solid transparent;
 }
@@ -41,16 +42,6 @@ d-content {
   margin-top: 60px;
   padding: 0 40px;
   background-color: $devui-global-bg;
-
-  d-breadcrumb {
-    margin-top: 8px;
-  }
-
-  .inner-content {
-    background-color: $devui-base-bg;
-    padding: 16px;
-    height: 100%;
-  }
 }
 
 d-footer {

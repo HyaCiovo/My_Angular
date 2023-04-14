@@ -16,22 +16,16 @@ const custom_global_config: DevUIGlobalConfig = {
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { TestComponent } from './pages/test/test.component';
-import { DrawerContentComponent } from './components/drawer-content/drawer-content.component';
+import { PageList } from './pages/pages';
+import { ComponentsList } from './components/components';
+import { LayoutsList } from './layout/layouts';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
-    HomeComponent,
-    NotFoundComponent,
-    HeaderComponent,
-    TestComponent,
-    DrawerContentComponent
+    ...PageList,
+    ...LayoutsList,
+    ...ComponentsList,
   ],
   imports: [
     BrowserModule,

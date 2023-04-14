@@ -4,20 +4,10 @@
   </d-header>
   <d-layout>
     <d-aside>
-      <d-accordion [data]="menu" class="menu" linkType="routerLink" (activeItemChange)="onChange($event)"></d-accordion>
+      <d-accordion [data]="menu" class="menu" linkType="routerLink"></d-accordion>
     </d-aside>
     <d-content>
-      <d-breadcrumb>
-        <d-breadcrumb-item>
-          <span>My Angular</span>
-        </d-breadcrumb-item>
-        <d-breadcrumb-item>
-          <span>{{tab}}</span>
-        </d-breadcrumb-item>
-      </d-breadcrumb>
-      <div class="inner-content">
-        <router-outlet></router-outlet>
-      </div>
+      <app-content></app-content>
     </d-content>
   </d-layout>
   <d-footer>

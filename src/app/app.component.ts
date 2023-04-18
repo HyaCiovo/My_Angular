@@ -20,6 +20,10 @@ export class AppComponent {
       title: '测试',
       link: "/test"
     },
+    {
+      title: "Rxjs",
+      link: "/rxjs"
+    }
     // {
     //   title: '内容三（默认展开）',
     //   open: true,

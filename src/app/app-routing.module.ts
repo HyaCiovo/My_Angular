@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent, HomeComponent, NotFoundComponent, TestComponent } from './pages/pages';
+import { AboutComponent, HomeComponent, NotFoundComponent, RxjsComponent, TestComponent } from './pages/pages';
 
 const routes: Routes = [
   {
@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path: "test",
     component: TestComponent
+  },
+  {
+    path: "rxjs",
+    component: RxjsComponent
   },
   {
     path: "**",

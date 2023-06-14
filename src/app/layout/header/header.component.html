@@ -2,5 +2,5 @@
 <div class="action-bar">
   <span>主题选择</span>
   <d-select class="theme-select" [placeholder]="'ChooseTheme'" [options]="themeOptions" [filterKey]="'name'"
-    (valueChange)="changeTheme($event)" [ngModel]="themeOptions[0]" />
+    (valueChange)="changeTheme($event)" [ngModel]="defaultValue" />
 </div>

@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 
 enum themeEnum {
-  "infinity-theme" = "无限",
-  "provence-theme" = "普罗旺斯",
-  "sweet-theme" = "蜜糖",
-  "deep-theme" = "深邃夜空",
+  "infinity-theme" = "Infinity",
+  "provence-theme" = "Provence",
+  "sweet-theme" = "Sweet",
+  "deep-theme" = "Dark",
 }
 @Component({
   selector: "app-header",
@@ -13,10 +13,10 @@ enum themeEnum {
 })
 export class HeaderComponent implements OnInit {
   themeOptions = [
-    { name: "无限", value: "infinity-theme" },
-    { name: "普罗旺斯", value: "provence-theme" },
-    { name: "蜜糖", value: "sweet-theme" },
-    { name: "深邃夜空", value: "deep-theme" },
+    { name: "Infinity", value: "infinity-theme" },
+    { name: "Provence", value: "provence-theme" },
+    { name: "Sweet", value: "sweet-theme" },
+    { name: "Dark", value: "deep-theme" },
   ];
   defaultValue = themeEnum[window["devuiThemeService"].currentTheme.id];
   changeTheme(theme: any) {

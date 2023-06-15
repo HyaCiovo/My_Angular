@@ -1,5 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'ng-devui/theme-collection/extend-theme.css';
+@import '@devui-design/icons/icomoon/devui-icon.css';
+
+* {
+  font-family: 'Comic Sans MS', cursiveInter;
+}
+
+// body {
+//   font-family: 'Comic Sans MS', cursiveInter
+// }
 
 .txt-center {
   text-align: center;

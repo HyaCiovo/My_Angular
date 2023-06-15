@@ -1,15 +1,11 @@
 <div class="drawer-menu">
-  <div [style.margin]="'20px 20px 0 0'" [style.text-align]="'right'" [style.cursor]="'pointer'">
-    <span [style.margin-right]="'12px'" title="More" class="icon icon-more-operate"> </span>
-    <span
-      [style.margin-right]="'8px'"
-      title="Fullscreen"
-      (click)="toggleFullScreen()"
-      class="icon"
-      [ngClass]="{ 'icon-maxmize': !isFullScreen, 'icon-minimize': isFullScreen }"
-    >
+  <div [style.margin]="'20px 20px 0 0'" [style.text-align]="'right'" [style.cursor]="'pointer'" class="menu-header">
+    <span [style.margin-right]="'16px'" title="More" class="icon icon-more-operate"> </span>
+    <span [style.margin-right]="'14px'" title="Fullscreen" (click)="toggleFullScreen()" class="icon"
+      [ngClass]="{ 'icon-maxmize': !isFullScreen, 'icon-minimize': isFullScreen }">
     </span>
     <span (click)="close($event)" title="Close" class="icon icon-close"> </span>
+    <div class="divider"></div>
   </div>
   <ul class="list-group" [style.margin-top.px]="20">
     <li class="list-group-item" *ngFor="let item of items; let i = index">

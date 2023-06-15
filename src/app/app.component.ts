@@ -10,19 +10,19 @@ export class AppComponent {
   title: string = "My_Angular";
   menu: AccordionMenuType = [
     {
-      title: "首页",
+      title: "Home",
       link: "/home",
     },
     {
-      title: "介绍",
-      children: [{ title: "介绍", link: "/about" }],
+      title: "About",
+      children: [{ title: "About", link: "/about" }],
     },
     {
-      title: "测试",
+      title: "Test",
       children: [
-        { title: "测试1", link: "/test1" },
-        { title: "测试2", link: "/test2" },
-        { title: "测试3", link: "/test3" },
+        { title: "Test1", link: "/test1" },
+        { title: "Test2", link: "/test2" },
+        { title: "Test3", link: "/test3" },
       ],
     },
     {

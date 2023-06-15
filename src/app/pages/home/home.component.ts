@@ -26,7 +26,7 @@ export class HomeComponent {
     } else {
       this.results = this.drawerService.open({
         drawerContentComponent: DrawerContentComponent,
-        width: '1000px',
+        width: '600px',
         clickDoms: this.doms,
         destroyOnHide: false,
         position: 'right',

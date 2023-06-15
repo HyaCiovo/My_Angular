@@ -1,19 +1,41 @@
 <div class="drawer-menu">
-  <div [style.margin]="'20px 20px 0 0'" [style.text-align]="'right'" [style.cursor]="'pointer'" class="menu-header">
-    <span [style.margin-right]="'16px'" title="More" class="icon icon-more-operate"> </span>
-    <span [style.margin-right]="'14px'" title="Fullscreen" (click)="toggleFullScreen()" class="icon"
-      [ngClass]="{ 'icon-maxmize': !isFullScreen, 'icon-minimize': isFullScreen }">
-    </span>
-    <span (click)="close($event)" title="Close" class="icon icon-close"> </span>
-    <div class="divider"></div>
+  <div [style.margin]="'20px'" [style.cursor]="'pointer'" class="menu-header">
+    <div [style.font-size]="'20px'">{{ title }}</div>
+    <div [style.text-align]="'right'">
+      <span
+        [style.margin-right]="'16px'"
+        title="More"
+        class="icon icon-more-operate"
+      >
+      </span>
+      <span
+        [style.margin-right]="'14px'"
+        title="Fullscreen"
+        (click)="toggleFullScreen()"
+        class="icon"
+        [ngClass]="{
+          'icon-maxmize': !isFullScreen(),
+          'icon-minimize': isFullScreen()
+        }"
+      >
+      </span>
+      <span (click)="close($event)" title="Close" class="icon icon-close">
+      </span>
+    </div>
   </div>
+  <div class="divider"></div>
   <ul class="list-group" [style.margin-top.px]="20">
     <li class="list-group-item" *ngFor="let item of items; let i = index">
       {{ item }}
     </li>
   </ul>
   <div class="operation-area">
-    <input #widthInput placeholder="Please input a number" dTextInput type="text" />
+    <input
+      #widthInput
+      placeholder="Please input a number"
+      dTextInput
+      type="text"
+    />
     <d-button (btnClick)="changeWidth(widthInput.value)">Change Width</d-button>
   </div>
 </div>

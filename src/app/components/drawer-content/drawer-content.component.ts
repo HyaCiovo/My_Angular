@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-drawer-content',
@@ -10,11 +10,13 @@ export class DrawerContentComponent {
   @Input() fullScreen: any;
   @Input() close: any;
   @Input() changeWidth: any;
-  isFullScreen = false;
+  @Input() title: any;
+  isFullScreen = signal(false);
+  drawerTitle = signal("Title")
   constructor() {
   }
   toggleFullScreen() {
-    this.isFullScreen = !this.isFullScreen;
+    this.isFullScreen.update(val => !val);
     this.fullScreen();
   }
 }

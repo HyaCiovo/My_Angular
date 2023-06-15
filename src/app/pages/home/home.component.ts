@@ -36,6 +36,7 @@ export class HomeComponent {
         data: {
           text: 'hello',
           name: 'tom1',
+          title: 'Sheet',
           items: [
             'This is item 1',
             'This is item 2',
@@ -51,7 +52,7 @@ export class HomeComponent {
           },
           changeWidth: (event: string) => {
             this.results?.drawerInstance.setWidth(event + 'px');
-          }
+          },
         }
       });
     }

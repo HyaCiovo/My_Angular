@@ -1,14 +1,17 @@
-@import 'ng-devui/styles-var/devui-var.scss';
+@import "ng-devui/styles-var/devui-var.scss";
 
-@font-face {
-  font-family: "devui-icomoon";
-  src: url('~@devui-design/icons/icomoon/fonts/devui-icomoon.eot?1622620995');
-  src: url('~@devui-design/icons/icomoon/fonts/devui-icomoon.woff?1622620995') format('woff'),
-    url('~@devui-design/icons/icomoon/fonts/devui-icomoon.ttf?1622620995') format('truetype'),
-    url('~@devui-design/icons/icomoon/fonts/devui-icomoon.svg?1622620995#devui-icomoon') format('svg');
-}
+// @font-face {
+//   font-family: "devui-icomoon";
+//   src: url("~@devui-design/icons/icomoon/fonts/devui-icomoon.eot?1622620995");
+//   src: url("~@devui-design/icons/icomoon/fonts/devui-icomoon.woff?1622620995")
+//       format("woff"),
+//     url("~@devui-design/icons/icomoon/fonts/devui-icomoon.ttf?1622620995")
+//       format("truetype"),
+//     url("~@devui-design/icons/icomoon/fonts/devui-icomoon.svg?1622620995#devui-icomoon")
+//       format("svg");
+// }
 
-input[type='text'] {
+input[type="text"] {
   width: 300px;
   height: 32px;
   box-sizing: border-box;
@@ -22,7 +25,7 @@ input[type='text'] {
   background-color: $devui-base-bg;
 }
 
-input[type='text']:hover {
+input[type="text"]:hover {
   border-color: $devui-form-control-line-active-hover;
 }
 
@@ -34,7 +37,7 @@ input[type='text']:hover {
 .divider {
   height: 2px;
   background: $devui-dividing-line;
-  margin: 20px -20px 0 0;
+  margin-right: -20px;
 }
 
 .operation-area {
@@ -48,4 +51,9 @@ input[type='text']:hover {
     max-width: 90%;
     margin-right: 16px;
   }
+}
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

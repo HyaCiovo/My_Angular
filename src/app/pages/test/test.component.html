@@ -1,1 +1,9 @@
-<p>test works!</p>
+<div>
+  <p>count:{{count()}}</p>
+  <p>doubleCount:{{doubleCount()}}</p>
+</div>
+<div class="btn-group">
+  <d-button (click)="decrease()">-</d-button>
+  <d-button (click)="increase()">+</d-button>
+  <d-button (click)="clear()">Reset Count</d-button>
+</div>

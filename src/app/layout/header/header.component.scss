@@ -1,6 +1,17 @@
-.title {
-  text-align: center;
-  color:azure
+.header_left {
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+
+  .angular_logo {
+    height: 50px;
+  }
+
+  .title {
+    text-align: center;
+    margin-left: 5px;
+    color: azure
+  }
 }
 
 .action-bar {
@@ -9,6 +20,12 @@
   .theme-select {
     margin-left: 10px;
     display: inline-block;
-    width: 120px
+    width: 120px;
+  }
+
+  ::ng-deep {
+    .devui-dropdown-origin:not(d-button):not(.icon):not([class^=icon-]):not(.devui-select-underlined-border):not(.devui-dropdown-no-border):not(.devui-no-border) {
+      border-width: 0
+    }
   }
 }

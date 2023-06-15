@@ -4,7 +4,7 @@
   </d-header>
   <d-layout>
     <d-aside>
-      <d-accordion [data]="menu" class="menu" linkType="routerLink" />
+      <d-accordion [data]="renderMenus(menu)" class="menu" linkType="routerLink" [autoOpenActiveMenu]="true" />
     </d-aside>
     <d-content>
       <app-content />

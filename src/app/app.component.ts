@@ -1,33 +1,42 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { AccordionMenuItem, AccordionMenuType } from "ng-devui";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = 'My_Angular';
-  menu = [
+  title: string = "My_Angular";
+  menu: AccordionMenuType = [
     {
-      title: '首页',
-      link: "/home"
+      title: "首页",
+      link: "/home",
     },
     {
-      title: '介绍',
-      link: "/about"
+      title: "介绍",
+      children: [{ title: "介绍", link: "/about" }],
     },
     {
-      title: '测试',
-      link: "/test"
+      title: "测试",
+      children: [
+        { title: "测试1", link: "/test1" },
+        { title: "测试2", link: "/test2" },
+        { title: "测试3", link: "/test3" },
+      ],
     },
     {
       title: "Rxjs",
-      link: "/rxjs"
-    }
-    // {
-    //   title: '内容三（默认展开）',
-    //   open: true,
-    //   children: [{ title: '子内容1(禁用)', disabled: true }, { title: '子内容2(默认激活)' }, { title: '子内容3' }],
-    // },
+      link: "/rxjs",
+    },
   ];
+  renderMenus = (menu: AccordionMenuType): AccordionMenuType => {
+    return menu.reduce((pre: AccordionMenuType, cur: AccordionMenuItem) => {
+      if (cur.children && cur.children.length === 0) {
+        return pre;
+      } else {
+        return pre.concat(cur);
+      }
+    }, []);
+  };
 }

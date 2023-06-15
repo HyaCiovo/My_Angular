@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent, HomeComponent, NotFoundComponent, RxjsComponent, TestComponent } from './pages/pages';
+import { Test3Component } from './pages/test/test3/test3.component';
+import { Test2Component } from './pages/test/test2/test2.component';
 
 const routes: Routes = [
   {
@@ -17,8 +19,16 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
-    path: "test",
+    path: "test1",
     component: TestComponent
+  },
+  {
+    path: "test2",
+    component: Test2Component
+  },
+  {
+    path: "test3",
+    component: Test3Component
   },
   {
     path: "rxjs",

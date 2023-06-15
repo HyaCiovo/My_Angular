@@ -19,6 +19,9 @@ import { AppComponent } from './app.component';
 import { PageList } from './pages/pages';
 import { ComponentsList } from './components/components';
 import { LayoutsList } from './layout/layouts';
+import { Test2Component } from './pages/test/test2/test2.component';
+import { Test3Component } from './pages/test/test3/test3.component';
+import { Test4Component } from './pages/test/test4/test4.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { LayoutsList } from './layout/layouts';
     ...PageList,
     ...LayoutsList,
     ...ComponentsList,
+    Test2Component,
+    Test3Component,
+    Test4Component,
   ],
   imports: [
     BrowserModule,

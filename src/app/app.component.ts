@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, signal } from "@angular/core";
 import { AccordionMenuItem, AccordionMenuType } from "ng-devui";
 
 @Component({
@@ -7,7 +7,7 @@ import { AccordionMenuItem, AccordionMenuType } from "ng-devui";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title: string = "My_Angular";
+  isExpanded = signal(true);
   menu: AccordionMenuType = [
     {
       title: "Home",
@@ -30,6 +30,9 @@ export class AppComponent {
       link: "/rxjs",
     },
   ];
+  toggleExpanded() {
+    this.isExpanded.update((val) => !val);
+  }
   renderMenus = (menu: AccordionMenuType): AccordionMenuType => {
     return menu.reduce((pre: AccordionMenuType, cur: AccordionMenuItem) => {
       if (cur.children && cur.children.length === 0) {

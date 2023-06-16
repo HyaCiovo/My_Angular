@@ -1,4 +1,5 @@
 import { Component, computed, effect, signal } from "@angular/core";
+import { DebouncedFunc, debounce } from "lodash";
 import { ToastService } from "ng-devui";
 
 @Component({
@@ -16,14 +17,22 @@ export class TestComponent {
           this.clear();
           this.toastService.open({
             value: [
-              { severity: "info", summary: "Notice", content: "Count can not be less than 0" },
+              {
+                severity: "info",
+                summary: "Notice",
+                content: "Count can not be less than 0",
+              },
             ],
           });
         }
         if (this.count() === 5) {
           this.toastService.open({
             value: [
-              { severity: "info", summary: "Notice", content: "Count equals 5" },
+              {
+                severity: "info",
+                summary: "Notice",
+                content: "Count equals 5",
+              },
             ],
           });
         }
@@ -32,13 +41,13 @@ export class TestComponent {
     );
   }
 
-  decrease(): void {
-    this.count.update((val) => val - 1);
-  }
-  increase(): void {
-    this.count.update((val) => val + 1);
-  }
-  clear(): void {
+  decrease: DebouncedFunc<() => void> = debounce(function () {
+    this.count.update((val: number) => val - 1);
+  }, 150);
+  increase: DebouncedFunc<() => void> = debounce(function () {
+    this.count.update((val: number) => val + 1);
+  }, 150);
+  clear: DebouncedFunc<() => void> = debounce(function () {
     this.count.set(0);
-  }
+  }, 150);
 }

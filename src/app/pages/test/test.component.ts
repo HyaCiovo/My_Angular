@@ -1,5 +1,6 @@
 import { Component, computed, effect, signal } from "@angular/core";
 import { DebouncedFunc, debounce } from "lodash";
+import { Router } from "@angular/router";
 import { ToastService } from "ng-devui";
 
 @Component({
@@ -10,7 +11,7 @@ import { ToastService } from "ng-devui";
 export class TestComponent {
   count = signal<number>(0);
   doubleCount = computed<number>(() => 2 * this.count());
-  constructor(private toastService: ToastService) {
+  constructor(private toastService: ToastService, private router: Router) {
     effect(
       () => {
         if (this.count() < 0) {
@@ -50,4 +51,8 @@ export class TestComponent {
   clear: DebouncedFunc<() => void> = debounce(function () {
     this.count.set(0);
   }, 150);
+
+  back(){
+    this.router.navigate([".."])
+  }
 }

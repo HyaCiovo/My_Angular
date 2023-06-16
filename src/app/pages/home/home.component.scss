@@ -1,3 +1,13 @@
 .content {
   height: 2000px;
 }
+
+.input-clearable {
+  display: flex;
+  align-items: center;
+
+  .close-icon {
+    margin-left: -25px;
+    cursor: pointer;
+  }
+}

@@ -1,5 +1,11 @@
 <h2>Home Page</h2>
 <section>
+  <div class="input-clearable" [style.margin-bottom]="'20px'" [style.WIDTH]="'400px'">
+    <input class="sheet-input" dTextInput placeholder="Please enter the sheet's title ~" [(ngModel)]="sheetTitle" />
+    <d-icon *ngIf="sheetTitle" class="icon icon-close close-icon" (click)="clearInput()"></d-icon>
+  </div>
+
+  <!-- <div>{{sheetTitle}}</div> -->
   <d-button (click)="openDrawer()" [width]="'120px'">Open</d-button>
   <div [style.margin-top]="'8px'">
     <d-button bsStyle="common" (click)="destroy()" [disabled]="!results?.drawerInstance" [width]="'120px'">

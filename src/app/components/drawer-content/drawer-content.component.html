@@ -1,26 +1,17 @@
 <div class="drawer-menu">
-  <div [style.margin]="'20px'" [style.cursor]="'pointer'" class="menu-header">
+  <div [style.margin]="'20px'" class="menu-header">
     <div [style.font-size]="'20px'">{{ title }}</div>
     <div [style.text-align]="'right'">
-      <span
-        [style.margin-right]="'16px'"
-        title="More"
-        class="icon icon-more-operate"
-      >
+      <span [style.cursor]="'pointer'" [style.margin-right]="'16px'" title="More" class="icon icon-more-operate">
       </span>
-      <span
-        [style.margin-right]="'14px'"
-        title="Fullscreen"
-        (click)="toggleFullScreen()"
-        class="icon"
-        [ngClass]="{
+      <span [style.cursor]="'pointer'" [style.margin-right]="'14px'" title="Fullscreen" (click)="toggleFullScreen()"
+        class="icon" [ngClass]="{
           'icon-maxmize': !isFullScreen(),
           'icon-minimize': isFullScreen()
-        }"
-      >
+        }">
       </span>
-      <span (click)="close($event)" title="Close" class="icon icon-close">
-      </span>
+      <span [style.cursor]="'pointer'" (click)="close($event)" title="Close" class="icon icon-close">
+        </span>
     </div>
   </div>
   <div class="divider"></div>
@@ -30,12 +21,7 @@
     </li>
   </ul>
   <div class="operation-area">
-    <input
-      #widthInput
-      placeholder="Please input a number"
-      dTextInput
-      type="text"
-    />
+    <input #widthInput placeholder="Please input a number" dTextInput type="text" />
     <d-button (btnClick)="changeWidth(widthInput.value)">Change Width</d-button>
   </div>
 </div>

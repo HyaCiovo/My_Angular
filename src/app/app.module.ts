@@ -3,6 +3,9 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
 
+import { StoreModule } from "@ngrx/store";
+import { counterReducer } from "./store/counter";
+
 // DevUI部分组件依赖angular动画，需要引入animations模块
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DevUIModule } from "ng-devui";
@@ -40,6 +43,7 @@ import { Test4Component } from "./pages/test/test4/test4.component";
     HttpClientModule,
     FormsModule,
     DevUIModule,
+    StoreModule.forRoot({ count: counterReducer }),
   ],
   providers: [
     {

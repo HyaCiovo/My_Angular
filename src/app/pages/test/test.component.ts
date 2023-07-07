@@ -1,7 +1,11 @@
 import { Component, computed, effect, signal } from "@angular/core";
 import { DebouncedFunc, debounce } from "lodash";
-import { Router } from "@angular/router";
+
 import { ToastService } from "ng-devui";
+import { Store } from "@ngrx/store";
+import { Observable } from "rxjs";
+import { increment, decrement, reset } from "../../store/counter";
+import { Location } from "@angular/common";
 
 @Component({
   selector: "app-test",
@@ -10,8 +14,14 @@ import { ToastService } from "ng-devui";
 })
 export class TestComponent {
   count = signal<number>(0);
+  count$: Observable<number>;
   doubleCount = computed<number>(() => 2 * this.count());
-  constructor(private toastService: ToastService, private router: Router) {
+  constructor(
+    private toastService: ToastService,
+    private location: Location,
+    private store: Store<{ count: number }>
+  ) {
+    this.count$ = store.select("count");
     effect(
       () => {
         if (this.count() < 0) {
@@ -41,7 +51,17 @@ export class TestComponent {
       { allowSignalWrites: true }
     );
   }
+  increment$() {
+    this.store.dispatch(increment());
+  }
 
+  decrement$() {
+    this.store.dispatch(decrement());
+  }
+
+  reset$() {
+    this.store.dispatch(reset());
+  }
   decrease: DebouncedFunc<() => void> = debounce(function () {
     this.count.update((val: number) => val - 1);
   }, 150);
@@ -52,7 +72,7 @@ export class TestComponent {
     this.count.set(0);
   }, 150);
 
-  back(){
-    this.router.navigate([".."])
+  back() {
+    this.location.back();
   }
 }

@@ -11,7 +11,7 @@ import { reset } from "src/app/store/counter";
 })
 export class Test2Component {
   constructor(private store: Store<{ count: number }>) {
-    console.log(store);
+    // console.log(store);
   }
   reset() {
     this.store.dispatch(reset());

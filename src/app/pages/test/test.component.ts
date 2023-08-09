@@ -1,4 +1,10 @@
-import { Component, computed, effect, signal } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  signal,
+} from "@angular/core";
 import { DebouncedFunc, debounce } from "lodash";
 
 import { ToastService } from "ng-devui";
@@ -11,6 +17,7 @@ import { Location } from "@angular/common";
   selector: "app-test",
   templateUrl: "./test.component.html",
   styleUrls: ["./test.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TestComponent {
   count = signal<number>(0);
@@ -51,26 +58,26 @@ export class TestComponent {
       { allowSignalWrites: true }
     );
   }
-  increment$() {
+  increase$() {
     this.store.dispatch(increment());
   }
 
-  decrement$() {
+  decrease$() {
     this.store.dispatch(decrement());
   }
 
-  reset$() {
+  clear$() {
     this.store.dispatch(reset());
   }
   decrease: DebouncedFunc<() => void> = debounce(function () {
     this.count.update((val: number) => val - 1);
-  }, 150);
+  }, 100);
   increase: DebouncedFunc<() => void> = debounce(function () {
     this.count.update((val: number) => val + 1);
-  }, 150);
+  }, 100);
   clear: DebouncedFunc<() => void> = debounce(function () {
     this.count.set(0);
-  }, 150);
+  }, 100);
 
   back() {
     this.location.back();

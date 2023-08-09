@@ -25,6 +25,7 @@ import { LayoutsList } from "./layout/layouts";
 import { Test2Component } from "./pages/test/test2/test2.component";
 import { Test3Component } from "./pages/test/test3/test3.component";
 import { Test4Component } from "./pages/test/test4/test4.component";
+import { TestchildComponent } from './components/testchild/testchild.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { Test4Component } from "./pages/test/test4/test4.component";
     Test2Component,
     Test3Component,
     Test4Component,
+    TestchildComponent,
   ],
   imports: [
     BrowserModule,
